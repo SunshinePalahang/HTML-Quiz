@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzerist</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+<body>
+    <div id="container">
+        <!------------  START ------------>
+        <div id="start"><i>Start Quiz</i></div>
+        <a style="text-decoration: none;" href="leaderboard.html">
+        <div id="leaderboard"><i>Leaderboard</i></div></a>
+        <div id="exitQuiz"><i>Exit Quiz</i></div>
+
+        <!------------  GUIDE ------------>
+        <div id="guide">
+            <h2><i>Instructions</i></h2>
+            <h4>1. The given time for each question is only 20 seconds.</h4>
+            <h4>2. After selecting your answer, the question form will close.</h4>
+            <h4>3. You will get 1 point per correct answer. This quiz has a total of 10 questions.</h4>
+            <h4 class="four">4. You cannot leave the quiz while answering.</h4>
+            <div id="button">
+                <button id="exit">Back</button>
+                <button id="continue">Continue</button>
+            </div>
+        </div>
+
+        <!------------  QUIZ ------------>
+        <div id="quiz">
+            <div id="quiz_header">
+                <h5>Quizzerist</h5>
+                <div id="timer">
+                    <h6>Time Left</h6>
+                    <h6 id="time">20</h6>
+                </div>
+            </div>
+
+            <!------------  QUESTIONS ------------>
+
+            <div id="question">
+                <h2 id="questionNo"></h2>
+                <h2 id="questionText"></h2>
+            </div>
+
+            <!------------  CHOICES ------------>
+
+            <div id="optionList">
+                <h4 class="choice_que" id="option1"></h4>
+                <h4 class="choice_que" id="option2"></h4>
+                <h4 class="choice_que" id="option3"></h4>
+                <h4 class="choice_que" id="option4"></h4>
+            </div>
+
+            <!------------  ANSWERS ------------>
+
+            <div id="answersSection">
+                <h3 id="total_correct"></h3>
+                <h3 id="next_question">Next</h3>
+            </div>
+        </div>
+
+        <!------------ RESULTS ------------>
+        <div id="result">
+            <i class="fas fa-trophy"></i>
+            <h6>You Have Completed The Quiz</h6>
+            <h6 id="points"></h6>
+            <button id="save">Save User</button>
+            <button id="check-answer" onclick="location.href='showans.html'">Check Answers</button>
+            <button class="resultTry" id="startAgain">Retry</button>
+        </div>
+
+        <div id="saveScore">
+            <p id="finalScore" class="hidden">0</p> 
+            <form class="end-form-container">
+                <h2 class="end-text">Enter your name to save your score</h2>
+                <input type="text" name="username" id="username" placeholder="Enter your name">
+                <div id="button">
+                <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>Save</button>
+                <button class="btn" id="startAgain">Retry</button>
+                
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/questions.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
